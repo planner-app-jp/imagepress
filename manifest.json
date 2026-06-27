@@ -1,0 +1,17 @@
+{
+  "name": "ImagePress",
+  "short_name": "ImagePress",
+  "description": "画像をまとめて圧縮・変換。HEICを変換。枚数制限なし。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

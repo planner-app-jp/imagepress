@@ -1466,15 +1466,26 @@ class App {
   }
 
   async processFile(file) {
-    let blob = file;
-    if (this.isHEIC(file)) {
-      if (!window._heic2anyLoaded || typeof heic2any === 'undefined') {
-        throw new Error('HEIC変換にはインターネット接続が必要です');
+    if (!this.isHEIC(file)) return this.resizeBlob(file);
+
+    // ① ブラウザのネイティブHEIC対応を優先（Safari / iOS）
+    try {
+      const bmp = await createImageBitmap(file);
+      bmp.close();
+      return this.resizeBlob(file); // ネイティブで読めるのでそのまま渡す
+    } catch(_) {}
+
+    // ② heic2any（Chrome など ネイティブ非対応のブラウザ用）
+    if (window._heic2anyLoaded && typeof heic2any !== 'undefined') {
+      try {
+        const r = await heic2any({ blob: file, toType: 'image/jpeg', quality: 1 });
+        return this.resizeBlob(Array.isArray(r) ? r[0] : r);
+      } catch(e) {
+        throw new Error(`HEIC変換失敗：${e.message || e}`);
       }
-      const r = await heic2any({ blob:file, toType:'image/jpeg', quality:1 });
-      blob = Array.isArray(r) ? r[0] : r;
     }
-    return this.resizeBlob(blob);
+
+    throw new Error('HEIC変換にはインターネット接続が必要です（CDN未読み込み）');
   }
 
   async resizeBlob(blob) {

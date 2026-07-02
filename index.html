@@ -705,9 +705,9 @@ header { text-align: center; padding: 56px 0 40px; }
 
 <!-- heic2any: CDN優先、失敗時はHEIC変換を無効化してオフライン動作 -->
 <script>window._heic2anyLoaded = false;</script>
-<script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"
+<script src="./heic2any.min.js"
   onload="window._heic2anyLoaded = true"
-  onerror="console.warn('heic2any: CDN未接続のためHEIC変換は無効')"></script>
+  onerror="console.warn('heic2any: 読み込み失敗のためHEIC変換は無効')"></script>
 <!-- JSZip: インライン埋め込み（オフライン対応） -->
 <script>/*!
 

@@ -1,18 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
-  <rect width="512" height="512" fill="#ffffff"/>
-  <!-- クリップ（左側バインダー） -->
-  <rect x="108" y="148" width="72" height="196" rx="36" ry="36" fill="none" stroke="#111" stroke-width="22"/>
-  <!-- 新聞本体 -->
-  <rect x="148" y="72" width="256" height="356" rx="18" ry="18" fill="#fff" stroke="#111" stroke-width="22"/>
-  <!-- PRESSタイトル -->
-  <text x="276" y="138" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="52" fill="#111" text-anchor="middle" letter-spacing="2">PRESS</text>
-  <!-- 写真ボックス -->
-  <rect x="174" y="160" width="88" height="88" rx="8" ry="8" fill="none" stroke="#111" stroke-width="18"/>
-  <!-- 写真右のテキスト行 -->
-  <line x1="278" y1="183" x2="374" y2="183" stroke="#111" stroke-width="16" stroke-linecap="round"/>
-  <line x1="278" y1="217" x2="355" y2="217" stroke="#111" stroke-width="16" stroke-linecap="round"/>
-  <!-- 下部テキスト行 -->
-  <line x1="174" y1="276" x2="374" y2="276" stroke="#111" stroke-width="16" stroke-linecap="round"/>
-  <line x1="174" y1="316" x2="374" y2="316" stroke="#111" stroke-width="16" stroke-linecap="round"/>
-  <line x1="174" y1="356" x2="340" y2="356" stroke="#111" stroke-width="16" stroke-linecap="round"/>
+  <!-- ImagePress icon: 手で圧縮する線画モチーフ(オリジナル作画) -->
+  <rect width="512" height="512" rx="96" fill="#ffffff"/>
+  <g fill="none" stroke="#1d1d1f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 上の矢印(下向き) -->
+    <path d="M256 62 v56"/>
+    <path d="M232 96 l24 26 24-26"/>
+    <!-- 下の矢印(上向き) -->
+    <path d="M256 450 v-56"/>
+    <path d="M232 416 l24-26 24 26"/>
+    <!-- 左から流れる線(圧縮されて収束) -->
+    <path d="M48 196 C 130 190, 210 214, 292 240"/>
+    <path d="M40 256 C 130 252, 210 252, 296 256"/>
+    <path d="M48 316 C 130 322, 210 298, 292 272"/>
+    <!-- つまむ手(親指+人差し指) -->
+    <path d="M472 150 C 420 158, 366 200, 318 236 C 306 245, 306 262, 320 268 L 344 276"/>
+    <path d="M472 372 C 424 360, 376 316, 344 292 C 332 282, 336 268, 350 266 L 372 268"/>
+    <path d="M472 150 C 484 210, 484 302, 472 372"/>
+    <!-- 指先のスパーク -->
+    <path d="M348 208 l18-20"/>
+    <path d="M368 232 l24-12"/>
+    <path d="M372 306 l24 10"/>
+  </g>
 </svg>
